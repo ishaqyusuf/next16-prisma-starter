@@ -3,6 +3,9 @@ import Image from "next/image";
 
 const prisma = new PrismaClient();
 export default async function Home() {
+  await prisma.user.create({
+    data: {},
+  });
   const x = await prisma.user.findMany();
   return (
     <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
